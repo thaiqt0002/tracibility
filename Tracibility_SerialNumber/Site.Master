@@ -1,4 +1,6 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Tracibility_SerialNumber.SiteMaster" %>
+<%@ Register Src="~/Controls/Header/Header.ascx" TagPrefix="uc" TagName="Header" %>
+<%@ Register Src="~/Controls/Footer/Footer.ascx" TagPrefix="uc" TagName="Footer" %>
 
 <!DOCTYPE html>
 
@@ -10,7 +12,8 @@
         setTimeout("preventBack()", 0);
         window.onunload = function () { null };
     </script>
-
+    <%--tailwind css--%>
+    <link href="css/index.css" rel="stylesheet" />
     <%--bootstrap css--%>
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
     <%--datatable css--%>
@@ -39,7 +42,11 @@
 <body>
     <form id="form1" runat="server">
         <asp:ScriptManager ID="scriptManager" runat="server"></asp:ScriptManager>
-        <div>
+
+        <div class="flex flex-col ">
+            <uc:Header ID="Header1" runat="server" />
+            <uc:Footer ID="Footer1" runat="server" />
+            <br/><br/>
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <a class="navbar-brand" href="#">
                     <b>Medtronic</b>
@@ -78,7 +85,6 @@
                 </div>
             </nav>
         </div>
-
 
         <!-- Main Content Placeholder -->
         <div>

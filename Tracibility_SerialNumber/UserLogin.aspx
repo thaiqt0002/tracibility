@@ -3,12 +3,11 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <br />
-    <div calss="container">
+    <div class="container">
         <div class="row">
             <div class="col-md-6 mx-auto">
                 <div class="card">
                     <div class="card-body">
-
                         <div class="row">
                             <div class="col">
                                 <center>
@@ -20,6 +19,7 @@
                             <div class="col">
                                 <center>
                                     <h3>User Login</h3>
+                                    
                                 </center>
                             </div>
                         </div>

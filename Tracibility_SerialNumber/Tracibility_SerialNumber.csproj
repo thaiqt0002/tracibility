@@ -16,7 +16,7 @@
     <AssemblyName>Tracibility_SerialNumber</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
-    <Use64BitIISExpress />
+    <Use64BitIISExpress>true</Use64BitIISExpress>
     <IISExpressSSLPort>44343</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -161,7 +161,12 @@
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="Controls\Footer\Footer.ascx" />
+    <Content Include="Controls\Images\ChevronDown.svg" />
+    <Content Include="Controls\Images\ChevronUp.svg" />
+    <Content Include="Controls\Header\Header.ascx" />
     <Content Include="css\customstylesheet.css" />
+    <Content Include="css\index.css" />
     <Content Include="datatables\css\jquery.dataTables.min.css" />
     <Content Include="datatables\js\jquery.dataTables.min.js" />
     <Content Include="fontawesome\attribution.js" />
@@ -1973,6 +1978,20 @@
     <Compile Include="AssignOrderBatch.aspx.designer.cs">
       <DependentUpon>AssignOrderBatch.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Footer\Footer.ascx.cs">
+      <DependentUpon>Footer.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Footer\Footer.ascx.designer.cs">
+      <DependentUpon>Footer.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Header\Header.ascx.cs">
+      <DependentUpon>Header.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Header\Header.ascx.designer.cs">
+      <DependentUpon>Header.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -2053,7 +2072,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>61895</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>https://localhost:44343/</IISUrl>
+          <IISUrl>http://localhost:44343/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
