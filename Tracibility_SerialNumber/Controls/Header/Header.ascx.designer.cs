@@ -7,65 +7,65 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Tracibility_SerialNumber
+namespace Tracibility.Controls
 {
 
 
-    public partial class SiteMaster
+    public partial class Header
     {
 
         /// <summary>
-        /// head control.
+        /// LogIn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl LogIn;
 
         /// <summary>
-        /// form1 control.
+        /// SignUp control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl SignUp;
 
         /// <summary>
-        /// scriptManager control.
+        /// LogOut control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.ScriptManager scriptManager;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl LogOut;
 
         /// <summary>
-        /// Header control.
+        /// SignUpButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Tracibility.Controls.Header Header;
+        protected global::System.Web.UI.WebControls.LinkButton SignUpButton;
 
         /// <summary>
-        /// ContentPlaceHolder1 control.
+        /// LogInButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder1;
+        protected global::System.Web.UI.WebControls.LinkButton LogInButton;
 
         /// <summary>
-        /// Footer control.
+        /// LogOutButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Tracibility.Controls.Footer Footer;
+        protected global::System.Web.UI.WebControls.LinkButton LogOutButton;
     }
 }

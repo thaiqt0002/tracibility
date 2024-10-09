@@ -1,4 +1,7 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Tracibility_SerialNumber.SiteMaster" %>
+<%@ Register Src="~/Controls/Header/Header.ascx" TagPrefix="uc" TagName="Header" %>
+
+<%@ Register Src="~/Controls/Footer/Footer.ascx" TagPrefix="uc" TagName="Footer" %>
 
 <!DOCTYPE html>
 
@@ -10,14 +13,15 @@
         setTimeout("preventBack()", 0);
         window.onunload = function () { null };
     </script>
-
+    <%--tailwind css--%>
+    <link href="css/index.css" rel="stylesheet" />
     <%--bootstrap css--%>
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
     <%--datatable css--%>
     <link href="datatables/css/jquery.dataTables.min.css" rel="stylesheet" />
     <%--font awesome css--%>
     <link href="fontawesome/css/all.css" rel="stylesheet" />
-
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" >  
     <%--Our custom css--%>
     <link href="css/customstylesheet.css" rel="stylesheet" />
 
@@ -33,223 +37,18 @@
     <link href="Content/bootstrap-chosen.css" rel="stylesheet" />
     <script src="Scripts/chosen.jquery.js"></script>
 
-    <asp:ContentPlaceHolder ID="head" runat="server">
-    </asp:ContentPlaceHolder>
+    <asp:ContentPlaceHolder ID="head" runat="server" />
+
 </head>
 <body>
     <form id="form1" runat="server">
         <asp:ScriptManager ID="scriptManager" runat="server"></asp:ScriptManager>
-        <div>
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <a class="navbar-brand" href="#">
-                    <b>Medtronic</b>
-                </a>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                     <ul class="navbar-nav mr-auto">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="InitializeSN.aspx"><b>Home</b></a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><b>Phase 0</b></a>
-                            <div class="dropdown-menu">
-                              <a class="dropdown-item" href="InitializeSN.aspx"><b>1. Initialize  Serial Number</b></a>
-                              <a class="dropdown-item" href="AssignBatch.aspx"><b>2. Assign Batch</b></a>
-                            </div>
-                        </li>  
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><b>Phase 1-2-3</b></a>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="AssignOrder.aspx"><b>1. Assign Order</b></a>
-                                <a class="dropdown-item" href="AssignBatch.aspx"><b>2. Assign Batch</b></a>
-                            </div>
-                        </li>  
-                    </ul>
-                    <ul class="navbar-nav">
-                        <li class="nav-item active">
-                            <asp:LinkButton class="nav-link" ID="LinkButton1" runat="server" OnClick="LinkButton1_Click"><b>User Login</b></asp:LinkButton>
-                        </li>
-                        <li class="nav-item active">
-                            <asp:LinkButton class="nav-link" ID="LinkButton2" runat="server" OnClick="LinkButton2_Click"><b>Sign Up</b></asp:LinkButton>
-                        </li>
-                        <li class="nav-item active">
-                            <asp:LinkButton class="nav-link" ID="LinkButton3" runat="server" OnClick="LinkButton3_Click"><b>Logout</b></asp:LinkButton>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
+
+        <div class="flex flex-col ">
+            <uc:Header ID="Header" runat="server" />
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server" />
+            <uc:Footer ID="Footer" runat="server" />
         </div>
-
-
-        <!-- Main Content Placeholder -->
-        <div>
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-            </asp:ContentPlaceHolder>
-        </div>
-        <!-- Main Content Placeholder -->
-
-         <!-- Footer -->  
-        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" >  
-        <style>  
-        footer {  
-         background:  #45526e;  
-          color: white;   
-        }  
-        footer a {  
-          color: #fff;  
-          font-size: 14px;  
-          transition-duration: 0.2s;  
-        }  
-        footer a:hover {  
-          color: #FA944B;  
-          text-decoration: none;  
-        }  
-        .copy {  
-          font-size: 12px;  
-          padding: 10px;  
-          border-top: 1px solid #FFFFFF;  
-        }  
-        .footer-middle {  
-          padding-top: 2em;  
-          color: white;  
-        }  
-        ul.social-network {  
-          list-style: none;  
-          display: inline;  
-          margin-left: 0 !important;  
-          padding: 0;  
-        }  
-        ul.social-network li {  
-          display: inline;  
-          margin: 0 5px;  
-        }  
-  
-        .social-network a.icoFacebook:hover {  
-          background-color: #3B5998;  
-        }  
-        .social-network a.icoLinkedin:hover {  
-          background-color: #007bb7;  
-        }  
-        .social-network a.icoFacebook:hover i  
-        {  
-          color: #fff;  
-        }  
-        .social-network a.icoLinkedin:hover i {  
-          color: #fff;  
-        }  
-        .social-network a.socialIcon:hover {  
-          color: #44BCDD;  
-        }  
-        .socialHoverClass {  
-          color: #44BCDD;  
-        }  
-        .social-circle li a {  
-          display: inline-block;  
-          position: relative;  
-          margin: 0 auto 0 auto;  
-          -moz-border-radius: 50%;  
-          -webkit-border-radius: 50%;  
-          border-radius: 50%;  
-          text-align: center;  
-          width: 30px;  
-          height: 30px;  
-          font-size: 15px;  
-        }  
-        .social-circle li i {  
-          margin: 0;  
-          line-height: 30px;  
-          text-align: center;  
-        }  
-        .social-circle li a:hover i  
-        {  
-          -moz-transform: rotate(360deg);  
-          -webkit-transform: rotate(360deg);   
-          transform: rotate(360deg);  
-          -webkit-transition: all 0.2s;  
-          -moz-transition: all 0.2s;  
-          -o-transition: all 0.2s;    
-          transition: all 0.2s;  
-        }  
-        .triggeredHover {  
-          -moz-transform: rotate(360deg);  
-          -webkit-transform: rotate(360deg);    
-          transform: rotate(360deg);  
-          -webkit-transition: all 0.2s;  
-          -moz-transition: all 0.2s;  
-          -o-transition: all 0.2s;   
-          transition: all 0.2s;  
-        }  
-        .social-circle i {  
-          color: #595959;  
-          -webkit-transition: all 0.8s;  
-          -moz-transition: all 0.8s;  
-          -o-transition: all 0.8s;   
-          transition: all 0.8s;  
-        }  
-        .social-network a {  
-          background-color: #F9F9F9;  
-        }  
-        .social-network a:hover {  
-        background: #ff304d;  
-        }  
-        </style>  
-        <footer class="mainfooter" role="contentinfo">  
-          <div class="footer-middle">  
-          <div class="card-footer">  
-            <div class="row">  
-              <div class="col-md-1 col-sm-6"> </div>
-              <div class="col-md-3 col-sm-6">  
-                <div class="footer-pad">  
-                  <h4> Medtronic</h4>  
-                  <ul class="list-unstyled">  
-                    <li> <a href="#"> </a> </li>  
-                    <li> <a href="#"><h6>Medtronic plc is an American medical device company. The company's operational and executive headquarters are in Minneapolis, Minnesota, and its legal headquarters are in Ireland due to its acquisition of Irish-based Covidien in 2015</h6></a></li>  
-                  </ul>  
-                </div>  
-              </div>  
-              <div class="col-md-2 col-sm-6">  
-                <div class="footer-pad">  
-                  <h4> Category</h4>  
-                  <ul class="list-unstyled">  
-                    <li><a href="#"> <h6>Patient Monitoring</h6></a> </li>  
-                    <li><a href="#"><h6>Ear, Nose & Throat</h6></a> </li>  
-                    <li><a href="#"><h6>Diabetes</h6></a></li>  
-                    <li><a href="#"><h6>Cadiovascular</h6></a></li>  
-                    <li><a href="#"><h6>Cardiac Rhythm</h6></a></li>  
-                    <li><a href="#"><h6>Neurological</h6></a></li>
-                  </ul>
-                </div>  
-              </div>  
-              <div class="col-md-3 col-sm-6">  
-                <div class="footer-pad">  
-                  <h4> Contact Us </h4>  
-                  <ul class="list-unstyled">  
-                    <li> <a href="#"><h6 >Headquarters: </h6></a> </li>  
-                    <li> <a href="#"><h6> 	Dublin, Ireland Minneapolis, Minnesota, U.S.</h6></a> </li>  
-                    <li> <a href="#"><h6>9.00 a.m. to 5.30 p.m. Monday to Friday</h6></a> </li>  
-                    <li> <a href="#"><h6>+ 1800-102-9800 (Toll-Free)</h6></a> </li>  
-                    <li> <a href="https://www.medtronic.com/us-en/index.html"><h6>Medtronic.com</h6></a> </li>
-                  </ul> 
-                </div>  
-              </div>  
-                <div class="col-md-3">  
-                    <h4> Follow Us </h4>  
-                    <ul class="social-network social-circle">  
-                     <li> <a href="#" class="icoFacebook" title="Facebook"> <i class="fa fa-facebook"> </i> </a> </li>  
-                     <li> <a href="#" class="icoLinkedin" title="Linkedin"> <i class="fa fa-linkedin"> </i> </a> </li>  
-                     <li> <a href="#"> <i class="fa fa-youtube" aria-hidden="true"> </i> </a> </li>  
-                    </ul>               
-                </div>  
-            </div>  
-            <div class="row">  
-            <div class="col-md-12 copy">  
-            <p class="text-center" style="font-size:20px">© Copyright 2024 - Medtronic.  All rights reserved.</p>
-            </div>  
-            </div>  
-          </div>  
-         </div>
-        </footer>  
-        <!-- ./Footer -->
-
     </form>
 </body>
 </html>
