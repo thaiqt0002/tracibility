@@ -35,6 +35,8 @@
             </div>
         </div>
     </div>
-    <div class=""></div>
+    <div class="bg-blue-900 border-t py-2 flex justify-center items-center text-white text-xl ">
+        <p>&copy; Copyright 2024 - Medtronic. All rights reserved.</p>
+    </div>
 </div>
 

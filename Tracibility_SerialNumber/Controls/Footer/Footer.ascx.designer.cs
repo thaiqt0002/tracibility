@@ -13,5 +13,6 @@ namespace Tracibility.Controls
 
     public partial class Footer
     {
+
     }
 }
