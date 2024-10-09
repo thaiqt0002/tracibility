@@ -12,7 +12,7 @@ namespace Tracibility.Controls
             if (Session["ID"] != null)
             {
                 LogIn.InnerText = Session["username"].ToString();
-                LogIn.Attributes["class"] = "h-full flex flex-col items-center justify-between group cursor-pointer text-sm text-blue-900";
+                LogIn.Attributes["class"] = "h-full flex flex-col items-center justify-between group cursor-pointer text-sm text-blue-900 font-bold";
                 LogIn.Attributes.Remove("onclick");
                 LogOut.Visible = true;
                 SignUp.Visible = false;
@@ -34,7 +34,7 @@ namespace Tracibility.Controls
 
         protected void LogOutEvent(object sender, EventArgs e)
         {
-            Response.Redirect("~/UserSignUp.aspx");
+            Response.Redirect("~/UserLogin.aspx");
         }
     }
         
